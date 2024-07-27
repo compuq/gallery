@@ -1,0 +1,182 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('close-up.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav .menu li {
+    margin: 0 15px;
+}
+
+nav .menu li a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+nav .menu li.logo i {
+    font-size: 24px;
+    color: #333;
+}
+
+nav .menu li.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+main {
+    margin-top: 70px; /* Offset for fixed header */
+}
+
+.content {
+    display: flex;
+    width: 300%; /* Ensure enough space for horizontal scrolling */
+    transition: transform 0.5s ease-in-out;
+}
+
+.section {
+    flex: 1;
+    min-width: 100%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left, .right {
+    padding: 20px;
+    width: 100%;
+}
+
+.responsive-image {
+    max-width: 30%;
+    height: auto;
+    object-fit: cover;
+}
+
+.logo-image {
+    width: 100px;
+    height: auto;
+}
+
+.login-form, .contact-form {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px; /* Adjust as needed */
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+}
+
+.login-form label, .contact-form label {
+    margin-bottom: 5px;
+}
+
+.login-form input, .contact-form input, .contact-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-form button, .contact-form button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-form .form-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.login-form .form-links a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.login-form .form-links span {
+    color: #333;
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+    nav .menu {
+        flex-direction: column;
+        align-items: center;
+        display: none; /* Hide menu by default */
+    }
+
+    nav .menu li {
+        margin: 10px 0;
+    }
+
+    nav .menu li.menu-toggle {
+        display: block;
+    }
+
+    nav .menu.show {
+        display: flex; /* Show menu when toggle button is clicked */
+    }
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .section {
+        margin-right: 0;
+    }
+
+    .login-form, .contact-form {
+        max-width: 100%; /* Ensure forms fit within the viewport */
+    }
+
+    .left {
+        order: 2; /* Make sure the image comes after the form */
+    }
+
+    .right {
+        order: 1; /* Form comes before the image */
+    }
+}

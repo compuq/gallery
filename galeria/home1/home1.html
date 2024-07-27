@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="favicon.png" type="image/png">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <img src="emergente.webp" alt="Emergente" class="logo-image">
+                <li class="logo"><i class="fas fa-home"></i></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li class="menu-toggle"><i class="fas fa-bars"></i></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="content">
+            <section id="inicio" class="section">
+                <div class="container">
+                    <div class="left">
+                        <img src="face.webp" alt="Imagen Descriptiva" class="responsive-image">
+                    </div>
+                    <div class="right">
+                        <form action="login.php" method="POST" class="login-form">
+                            <h2>Bienvenido, que bueno verte de nuevo</h2>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                            <label for="password">Contraseña:</label>
+                            <input type="password" id="password" name="password" required>
+                            <button type="submit">Iniciar Sesión</button>
+                            <div class="form-links">
+                                <a href="#forgot-password">Olvidé mi contraseña</a>
+                                <span> | </span>
+                                <a href="#register">No tienes usuario, regístrate</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sobre-nosotros" class="section">
+                <div class="container">
+                    <h2>Sobre Nosotros</h2>
+                    <p>Somos una empresa dedicada a ofrecer los mejores productos de arte, escultura, AI y alfombras. Nuestro equipo está compuesto por artistas talentosos y apasionados por su trabajo. Nos esforzamos por brindar productos de alta calidad y un servicio al cliente excepcional.</p>
+                </div>
+            </section>
+
+            <section id="contacto" class="section">
+                <div class="container">
+                    <h2>Contacto</h2>
+                    <form action="contacto.php" method="POST" class="contact-form">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                        <label for="email-contacto">Email:</label>
+                        <input type="email" id="email-contacto" name="email" required>
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" required></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
